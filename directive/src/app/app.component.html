@@ -1,0 +1,18 @@
+<!-- 自訂結構型指令 appIf -->
+
+<div style="margin: 15px">
+  <h2>自訂結構型指令 appIf</h2>
+
+  <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzType="primary">選擇性別</button>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <li (click)="changeShow('man')" nz-menu-item>男</li>
+      <li (click)="changeShow('woman')" nz-menu-item>女</li>
+    </ul>
+  </nz-dropdown-menu>
+
+
+
+  <p *ngIf="isMan">性別：男</p>
+  <p *ngIf="!isMan">性別：女</p>
+</div>
